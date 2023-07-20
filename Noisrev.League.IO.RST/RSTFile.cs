@@ -384,8 +384,16 @@ public class RSTFile : IEquatable<RSTFile>
                 // Add the text and offset to the Dictionary
                 textOffsets.Add(text, offset);
             }
-            // Write the Hash
-            bytesWriter.Write(RSTHash.ComputeHash(entry.Key, offset, Type));
+
+            try
+            {
+                // Write the Hash
+                bytesWriter.Write(RSTHash.ComputeHash(entry.Key, offset, Type));
+            }catch(Exception ex)
+            {
+                Console.OutputEncoding = Encoding.UTF8;
+                Console.WriteLine($"bytesWriter.Write(RSTHash.ComputeHash(entry.Key, offset, Type)); \nError: {ex}, \ntext: {text}, \noffset: {offset}");
+            }
         }
 
         // Version less than 5.

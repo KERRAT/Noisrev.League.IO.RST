@@ -17,6 +17,9 @@
       <None Update="Resources\fontconfig_en_us.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+      <None Update="Resources\main_ru_ru.stringtable">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>
